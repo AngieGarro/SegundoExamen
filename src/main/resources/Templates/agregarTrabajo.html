@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Trabajo</title>
+    <!-- link para tipo de letra -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<h3>Registro de Trabajo</h3>
+<div>
+    <form action="#" th:action="@{/agregarTrabajo}" th:object="${trabajo}" method="post">
+        <label for="Fecha">Fecha de la Auditoria</label>
+        <input type="date" th:field="*{Fecha}"  id="Fecha"/>
+        <label for="Consultor">Consultor</label>
+        <input type="text" th:field="*{email}"  id="Consultor"/>
+        <label for="Cliente">Cliente</label>
+        <input type="text" th:field="*{Cliente}"  id="Cliente"/>
+        <input type="submit" value="Agregar">
+    </form>
+</div>
+<div>
+    <a href="/">Volver al principal</a>
+</div>
+</body>
+</html>

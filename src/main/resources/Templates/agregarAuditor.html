@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Auditores</title>
+    <!-- link para tipo de letra -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<h3>Registro de Auditores</h3>
+<div>
+<form action="#" th:action="@{/agregarAuditor}" th:object="${auditor}" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:field="*{nombre}"  id="nombre"/>
+    <label for="ape1">Primer Apellido</label>
+    <input type="text" th:field="*{ape1}"  id="ape1"/>
+    <label for="ape2">Segundo Apellido</label>
+    <input type="text" th:field="*{ape2}"  id="ape2"/>
+    <div></div>
+    <label for="direccion">Direcci&oacute;n</label>
+    <input type="text" th:field="*{direccion}"  id="direccion"/>
+    <label for="tel">Telefono</label>
+    <input type="tel" th:field="*{tel}"  id="tel"/>
+    <label for="FechaN">Fecha de Nacimiento</label>
+    <input type="date" th:field="*{FechaN}"  id="FechaN"/>
+    <div></div>
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}"  id="email"/>
+    <label for="disponibilidad">Tiene disponibildad para viajar</label>
+    <input type="text" th:field="*{disponibilidad}"  id="disponibilidad"/>
+    <label for="especialidad">Especialidad</label>
+    <input type="text" th:field="*{especialidad}"  id="especialidad"/>
+    <div></div>
+    <label for="estado">Ingrese su estado (ACTIVO O INACTIVO)</label>
+    <input type="text" th:field="*{estado}"  id="estado"/>
+    <input type="submit" value="Agregar">
+</form>
+</div>
+<div>
+    <a href="/">Volver al principal</a>
+</div>
+</body>
+</html>

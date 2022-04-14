@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Clientes</title>
+</head>
+<body>
+<div>
+    <h1>CLIENTES</h1>
+    <ul>
+        <div th:each="entry,status : ${cliente}">
+            <li>
+                <div></div>
+                <div>
+                    <div>
+                        <p><small><i></i>
+                            <span th:text="${entry.createdAsShort}">CREATED</span></small></p>
+                    </div>
+                    <div class="tl-body">
+                        <p><span th:text="${entry.razonSocial}">RAZ&Oacute;N SOCIAL</span></p>
+                        <p><span th:text="${entry.cedJuridica}">CEDULA JUR&Iacute;DICA</span></p>
+                        <p><span th:text="${entry.direccion}">DIRECCI&oacute;n</span></p>
+                        <p><span th:text="${entry.tel}">TELEFONO</span></p>
+                        <p><span th:text="${entry.personContacts}">PERSONAS DE CONTACTO</span></p>
+                    </div>
+                </div>
+                <div>
+                    <a th:href="@{/editar/{id}(id=${entry.id})}">Editar</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{/borrar/{id}(id=${entry.id})}">Borrar</a>
+                </div>
+            </li>
+        </div>
+    </ul>
+</div>
+<div>
+    <a href="/">Volver al principal</a>
+</div>
+</body>
+</html>

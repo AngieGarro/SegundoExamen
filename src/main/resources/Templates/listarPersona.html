@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+</head>
+<body>
+<!-- Visualización de Personas de Contacto-->
+<div>
+    <h1>PERSONAS DE CONTACTO</h1>
+    <ul>
+        <div th:each="entry,status : ${persona}">
+            <li>
+                <div></div>
+                <div>
+                    <div>
+                        <p><small><i></i>
+                            <span th:text="${entry.createdAsShort}">CREATED</span></small></p>
+                    </div>
+                    <div class="tl-body">
+                        <p>
+                            <span th:text="${entry.nombre}">NOMBRE</span>
+                            <span th:text="${entry.ape1}">I APELLIDO</span>
+                            <span th:text="${entry.ape2}">II APELLIDO</span>
+                        </p>
+                        <p><span th:text="${entry.email}">EMAIL</span></p>
+                        <p><span th:text="${entry.tel}">TELEFONO</span></p>
+                    </div>
+                </div>
+                <div>
+                    <a th:href="@{/editar/{id}(id=${entry.id})}">Editar</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{/borrar/{id}(id=${entry.id})}">Borrar</a>
+                </div>
+            </li>
+        </div>
+    </ul>
+</div>
+
+</body>
+</html>

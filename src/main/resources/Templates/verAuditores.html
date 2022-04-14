@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Auditores</title>
+</head>
+<body>
+<div>
+    <h1>AUDITORES</h1>
+    <ul>
+        <div th:each="entry,status : ${auditor}">
+            <li>
+                <div></div>
+                <div>
+                    <div>
+                        <p><small><i></i>
+                            <span th:text="${entry.createdAsShort}">CREATED</span></small></p>
+                    </div>
+                    <div class="tl-body">
+                        <p>
+                            <span th:text="${entry.nombre}">NOMBRE</span>
+                            <span th:text="${entry.ape1}">I APELLIDO</span>
+                            <span th:text="${entry.ape2}">II APELLIDO</span>
+                        </p>
+                        <p><span th:text="${entry.FechaN}">FECHA DE NACIMIENTO</span></p>
+                        <p><span th:text="${entry.especialidad}">ESPECIALIDAD</span></p>
+                        <p><span th:text="${entry.direccion}">DIRECCI&Oacute;N</span></p>
+                        <p><span th:text="${entry.disponibilidad}">DISPONIBILIDAD</span></p>
+                        <p><span th:text="${entry.email}">EMAIL</span></p>
+                        <p><span th:text="${entry.tel}">TELEFONO</span></p>
+                        <p><span th:text="${entry.estado}">ESTADO DEL CONSULTOR</span></p>
+                    </div>
+                </div>
+                <div>
+
+                    <a th:href="@{/editar/{id}(id=${entry.id})}">Editar</a>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+        </div>
+    </ul>
+</div>
+<div>
+    <a href="/">Volver al principal</a>
+</div>
+</body>
+</html>

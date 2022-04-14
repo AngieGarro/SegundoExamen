@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Clientes</title>
+    <!-- link para tipo de letra -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<h3>Registro de Clientes</h3>
+<div>
+    <form action="#" th:action="@{/editar/{id}(id=${id})}" th:object="${clienteToEdit}" method="post">
+        <label for="razonSocial">Raz&oacute;n Social</label>
+        <input type="text" th:field="*{razonSocial}"  id="razonSocial"/>
+        <label for="cedJuridica">Cedula Jur&iacute;dica</label>
+        <input type="text" th:field="*{cedJuridica}"  id="cedJuridica"/>
+        <label for="tel">Telefono</label>
+        <input type="tel" th:field="*{tel}"  id="tel"/>
+        <div></div>
+        <label for="direccion">Direcci&oacute;n</label>
+        <input type="text" th:field="*{direccion}"  id="direccion"/>
+        <label for="personContacts">Persona de Contacto</label>
+        <input type="text" th:field="*{personContacts}"  id="personContacts"/>
+        <input type="submit" value="Guardar Cambios">
+    </form>
+</div>
+<div>
+    <a href="/">Volver al principal</a>
+</div>
+</body>
+</html>

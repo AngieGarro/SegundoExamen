@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Visitas</title>
+</head>
+<body>
+<div>
+    <h1>VISITAS DE TRABAJO</h1>
+    <ul>
+        <div th:each="entry,status : ${trabajo}">
+            <li>
+                <div></div>
+                <div>
+                    <div>
+                        <p><small><i></i>
+                            <span th:text="${entry.createdAsShort}">CREATED</span></small></p>
+                    </div>
+                    <div class="tl-body">
+                        <p><span th:text="${entry.Fecha}">FECHA DE VISITA</span></p>
+                        <p><span th:text="${entry.Consultor}">¿Qui&eacute;n consulta?</span></p>
+                        <p><span th:text="${entry.Cliente}">CLIENTE</span></p>
+                    </div>
+                </div>
+                <div>
+                    <a th:href="@{/editar/{id}(id=${entry.id})}">Editar</a>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+        </div>
+    </ul>
+</div>
+</body>
+</html>
